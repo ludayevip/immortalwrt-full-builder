@@ -23,7 +23,7 @@
 ## 🚀 如何触发云端编译
 
 1. 进入当前 GitHub 仓库的 **Actions** 页面：
-   `https://github.com/nimo7735/immortalwrt-full-builder/actions`
+   `https://github.com/ludayevip/immortalwrt-full-builder/actions`
 2. 点击左侧工作流中的 **Build ImmortalWrt Firmware (Full)**。
 3. 点击右侧的 **Run workflow** 按钮，GitHub Actions 将自动分配云端构建机进行全速多核编译！
 4. 编译完成后，固件会自动发布在仓库的 **Releases** 页面供随时下载。
