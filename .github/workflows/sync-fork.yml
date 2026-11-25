@@ -1,0 +1,22 @@
+name: Sync Fork Upstream
+on:
+  schedule:
+    - cron: '0 4 * * *' # UTC 04:00 → 北京时间 12:00 每日自动同步
+  workflow_dispatch:   # 支持网页手动触发同步
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync from nimo7735/immortalwrt-full-builder
+        uses: aormsby/Fork-Sync-With-Upstream-action@v3.4
+        with:
+          upstream_repository: nimo7735/immortalwrt-full-builder
+          target_repository: ${{ github.repository }}
+          upstream_branch: main
+          target_branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          merge_strategy: ours
+          merge_options: '-X ours'
+          protected_files: |
+            full.config
