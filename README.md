@@ -17,6 +17,7 @@
 - **远程互联**：原生 Linux 内核态 WireGuard (kmod-wireguard)，全速线速转发，与透明代理秋毫无犯
 - **存储扩展**：集成 FUSE 3 全栈 (`kmod-fuse`, `libfuse3`, `fuse3-utils`)，Docker 容器联动秒变轻 NAS
 - **开机自愈**：`99-custom-settings` 自动识别物理网口、单网桥清理、自动创建 br-lan、TTYD 终端免密登录
+- QoS 增强：默认关闭 flow-offload / nft-offload，保障 TC 流量镜像，支持 QoSmate CAKE/HFSC 双向整形
 
 ---
 
@@ -27,3 +28,7 @@
 2. 点击左侧工作流中的 **Build ImmortalWrt Firmware (Full)**。
 3. 点击右侧的 **Run workflow** 按钮，GitHub Actions 将自动分配云端构建机进行全速多核编译！
 4. 编译完成后，固件会自动发布在仓库的 **Releases** 页面供随时下载。
+
+##⏰ 自动编译规则
+- 手动触发：随时点击 Run workflow 编译
+- 定时自动：每周五 北京时间 02:00 自动编译一次
